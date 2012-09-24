@@ -1,0 +1,306 @@
+source('/Users/clemensl/RtoDB/TimingforFilterProgram.R')
+dim(control)
+dim(controls)
+objects()
+library(MoExExonProbesetLocation)
+data(MoExExonProbesetLocation)
+dim(MoExExonProbesetLocation)
+MoExExonProbesetLocation[1,1]
+MoExExonProbesetLocation[1,2]
+MoExExonProbesetLocation[1,3]
+MoExExonProbesetLocation[1,4]
+MoExExonProbesetLocation[1,5]
+MoExExonProbesetLocation[1,6]
+MoExExonProbesetLocation[1,7]
+MoExExonProbesetLocation[1,]
+load('/userFiles/public/Datasets/PublicILSXISSRIMice_Master/v3/Affymetrix.ExportOutBioC.output.Rdata')
+dim(gname)
+objects()
+dim(Gnames)
+length(Gnames)
+dim(MoExExonProbesetLocation)
+controls <- MoExExonProbesetLocation[MoExExonProbesetLocation$ANNLEVEL=="---","EPROBESETID"]
+dim(controls)
+length(controls)
+Gnames[1]
+controls[1]
+xxx <- match(controls, Gnames)
+dim(xxx)
+length(xxx)
+filter.index <- filter.index[!is.na(filter.index)]
+xxx <- xxx[!is.na(xxx)]
+length(xxx)
+xxx <- match(controls, Gnames)
+xxx
+controls
+Gnames
+xxx
+controls[121]
+xxx[121]
+gnames[121]
+Gnames[121]
+Gnames[xxx[121]]
+controls[140]
+xxx[140]
+Which(Gnames == 5156483)
+which(Gnames == 5156483)
+which(Gnames == 4305093)
+which(Gnames == 4305075)
+setdiff(controls,Gnames)
+yyy<-setdiff(controls,Gnames)
+length(yyy)
+zzz<- setdiff(Gnames, Controls)
+zzz<- setdiff(Gnames, controls)
+length(zzz)
+zzz<-comparelists(Gnames,controls)
+library(comparelists)
+zzz<-intersect(Gnames,Controls)
+zzz<-intersect(Gnames,controls)
+length(zzz)
+load('/userFiles/public/Datasets/PublicILSXISSRIMice_Master/v3/Affymetrix.ExportOutBioC.output.Rdata')
+length(controls)
+length(Gnames)
+filter.index<-match(controls,Gnames)
+length(filter.index)
+filter.index <- filter.index[!is.na(filter.index)]
+length(filter.index)
+is.logical(filter.index)
+dim(Avgdata)
+xxx<-Avgdata[-filter.index,]
+MoExExonProbesetLocation[1,]
+dim(MoExExonProbesetLocation)
+source('/Users/clemensl/RtoDB/loadIntoOracle.R')
+load(bigmemory)
+load(bigMemory)
+load(RODM)
+library(RODM)
+objects()
+db<-RODM_open_dbms_connection(dsn="Dev", uid="INIA",pwd="INIA_dev")
+RODM_list_dbms_models(db)
+load('/userFiles/public/Datasets/PublicILSXISSRIMice_Master/v3/Affymetrix.ExportOutBioC.output.Rdata')
+objects()
+data()
+myOrange<-orange
+myOrange<-Orange
+dim(myOrange)
+RODM_create_dbms_table(db,"myOrange")
+sqlColumns(db,'myOrange')$COLUMN_NAME
+RODM_create_dbms_table(db,"Absdata")
+lecTesting<-as.data.frame(Avgdata)
+RODM_create_dbms_table(db,"lecTesting")
+objects()
+length(groups)
+dim(groups)
+length(grouping)
+dim(grouping)
+dim(absdata)
+dim(Absdata)
+groups[1]
+groups[2]
+groupings[1]
+grouping[1]
+grouping[2]
+grouping[4]
+grouping[1:10]
+rep(-4,9)
+ls
+objects()
+load('/userFiles/public/Datasets/PublicILSXISSRIMice_Master/v3/herits.fullPS.LXS.Brain.txt')
+load('/userFiles/public/Datasets/PublicILSXISSRIMice_Master/v3/LXS.fullPS.herits.Rdata')
+objects
+objects()
+dim(r.square)
+length(r.square)
+load('/userFiles/public/Datasets/PublicILSXISSRIMice_Master/v3/Affymetrix.ExportOutBioC.output.Rdata')
+objects()
+groups
+groupings
+grouping
+object()
+objects()
+dim(groups)
+dim(groupings)
+dim(grouping)
+Gnames[1:10]
+groups[1:10]
+grouping[1:10]
+Procedure
+length(groups)
+length(groupings)
+length(grouping)
+source("http://bioconductor.org/biocLite.R")
+biocLite("RedeR")
+load("/Users/clemensl/R_Testing/Main_Vignette.R")
+library(RedeR)
+rdp <- RedPort()
+calld(rdp)
+g1 <- graph.lattice(c(5,5,5))
+addGraph(rdp,g1,layout.kamada.kawai(g1))
+data(ER.deg)
+dt <- ER.deg$dat
+sg <- ER.deg$ceg
+sg <- att.mapv(sg, dat=dt, refcol=1)
+sg <- att.setv(sg,from="Symbol", to="nodeAlias")
+sg <- att.setv(sg, from="logFC.t3...t0", to="nodeColor", breaks=seq(-1,1,0.2), pal=2)
+sg <- att.setv(sg, from="ERbdist", to="nodeSize", nquant=10, isrev=TRUE, xlim=c(5,40,1))
+addGraph(rdp,sg)
+calld(rdp)
+addGraph(rdp,sg)
+hc <- hclust(dist(get.adjacency(sg, attr="weight")))
+nesthc(rdp,hc, cutlevel=3, nmemb=5, cex=0.3, labels=V(sg)$nodeAlias)
+mergeOutEdges(rdp)
+relax(rdp)
+scl <- sg$legNodeColor$scale
+leg <- sg$legNodeColor$legend
+addLegend.color(rdp, colvec=scl, labvec=leg, title="diff. gene expression (logFC)")
+scl <- sg$legNodeSize$scale
+leg <- sg$legNodeSize$legend
+addLegend.size(rdp, sizevec=scl, labvec=leg, title="bd site distance (kb)")
+objects
+objects()
+sg
+sg[1]
+sg[2]
+sg[3]
+sg[4]
+sg[5]
+sg[6]
+sg[7]
+sg[68
+sg[8]
+sg[9]
+load("/Users/clemensl/Library/Caches/TemporaryItems/Outlook Temp/TOMmatrix.Rdata")
+library("RSvgDevice")#
+devSVG("histogram.svg", width = 5, height = 4)#
+set.seed(50)#
+par(mar=c(3,2,1,1),yaxs="i",mgp=c(1.8,.9,0))#
+hist(rnorm(100),col="lightblue",#
+main="",xlab="",ylab="",ylim=c(0,28))#
+box()#
+dev.off()
+library("RSvgDevice")#
+devSVG("histogram.svg", width = 5, height = 4)#
+set.seed(50)#
+par(mar=c(3,2,1,1),yaxs="i",mgp=c(1.8,.9,0))#
+hist(rnorm(100),col="lightblue",#
+main="",xlab="",ylab="",ylim=c(0,28))#
+box()
+rm(list=ls())
+objects()
+library("RSvgDevice")
+devSVG("histogram.svg",width=5,height=4)
+set.seed(50)
+par(mar=c(3,2,1,1),yaxs="i",mgp=c(1.8,.9,0))
+hist(rnorm(100),col="lightblue",main="",xlab="",ylab="",ylim=c(0,28))
+box()
+library(CairoSVG)
+library(Cairo)
+CairoSVG()
+hist(rpois(500,3))
+dev.off()
+require(Cairo)set.seed=1111orbits=10n.per.orbit=100angle=rep(seq(0,2*pi,by=2*pi/(n.per.orbit-1)),orbits)wander<-runif(orbits*n.per.orbit, -1,1)pos<-scale(cumsum(wander))+5 fit <- smooth.spline(pos)spl.pred <- predict(fit)$yx<-sin(angle)*spl.predy<-cos(angle)*spl.pred COL <- rainbow(length(y)) CairoSVG(file = "circle_art.svg", width = 6, height = 6, bg = "black")par(mar=c(0,0,0,0), bg="black")plot(x, y,t="n")segments(x[1:(length(x)-1)], y[1:(length(y)-1)], x1=x[2:length(x)], y1=y[2:length(y)],col=COL, lwd=3, lend=0)dev.off()
+require(Cairo)set.seed=1111#
+orbits=10#
+n.per.orbit=100#
+angle=rep(seq(0,2*pi,by=2*pi/(n.per.orbit-1)),orbits)#
+wander<-runif(orbits*n.per.orbit, -1,1)#
+pos<-scale(cumsum(wander))+5#
+ #
+fit <- smooth.spline(pos)#
+spl.pred <- predict(fit)$y#
+x<-sin(angle)*spl.pred#
+y<-cos(angle)*spl.pred#
+ #
+COL <- rainbow(length(y))#
+ #
+CairoSVG(file = "circle_art.svg", width = 6, height = 6, bg = "black")par(mar=c(0,0,0,0), bg="black")plot(x, y,t="n")segments(x[1:(length(x)-1)], y[1:(length(y)-1)], #
+x1=x[2:length(x)], y1=y[2:length(y)],col=COL, lwd=3, lend=0) #
+#
+dev.off()
+require(Cairo);set.seed=1111;#
+orbits=10;#
+n.per.orbit=100;
+require(Cairo);set.seed=1111;#
+orbits=10;#
+n.per.orbit=100;#
+angle=rep(seq(0,2*pi,by=2*pi/(n.per.orbit-1)),orbits);#
+wander<-runif(orbits*n.per.orbit, -1,1);#
+pos<-scale(cumsum(wander))+5;#
+ #
+fit <- smooth.spline(pos);#
+spl.pred <- predict(fit)$y;#
+x<-sin(angle)*spl.pred;#
+y<-cos(angle)*spl.pred;
+COL <- rainbow(length(y));#
+ #
+CairoSVG(file = "circle_art.svg", width = 6, height = 6, bg = "black");par(mar=c(0,0,0,0), bg="black");plot(x, y,t="n");segments(x[1:(length(x)-1)], y[1:(length(y)-1)], x1=x[2:length(x)], y1=y[2:length(y)],col=COL, lwd=3, lend=0) ;#
+#
+dev.off();
+capabilities()["cairo"]
+COL <- rainbow(length(y));#
+ #
+CairoSVG(file = "circle_art.svg", width = 6, height = 6, bg = "black");par(mar=c(0,0,0,0), bg="black");plot(x, y,t="n");segments(x[1:(length(x)-1)], y[1:(length(y)-1)], x1=x[2:length(x)], y1=y[2:length(y)],col=COL, lwd=3, lend=0) ;
+objects()
+COL <- rainbow(length(y));#
+ #
+CairoSVG(file = "circle_art.svg", width = 6, height = 6, bg = "black");par(mar=c(0,0,0,0), bg="black");plot(x, y,t="n");segments(x[1:(length(x)-1)], y[1:(length(y)-1)], x1=x[2:length(x)], y1=y[2:length(y)],col=COL, lwd=3, lend=0) ;
+dev.set()
+demo()
+demo(package=.packages(all.available = TRUE))
+zoo-overplot
+default
+Hershey
+embedded
+plotmath
+demo(package=.packages(all.available = TRUE))
+Cairo(600,600,file="plot.png", type="png",bg="white")
+Cairo(600,600,file="plot.png")
+library(Cairo)
+Cairo(600,600,file="plot.png")
+plot(rnorm(4000),rnorm(4000),col="#ff000018",pch=19,cex=2)
+dev.off()
+Cairo(600,600,file="plot.png")
+plot(rnorm(4000),rnorm(4000),col="#ff000018",pch=19,cex=2)
+devSVG()
+plot(1:11,(-5:5)^2,type='b',main="Simple Example Plot")
+dev.off()
+devSVG()
+plot(1:11,(-5:5)^2,type='b',main="Simple Example Plot")
+devSVG()
+plot(1:11,(-5:5)^2,type='b',main="Simple Example Plot")
+dev.off()
+devSVG()
+plot(1:11,(-5:5)^2,type='b',main="Simple Example Plot")
+library(cairoDevice)
+Cairo()
+plot(1:11,(-5:5)^2,type='b',main="Simple Example Plot")
+Cairo(600,600,file="plot.svg",type="svg",bg="white")
+Cairo(file="plot.svg",width=6,height=6,bg="transparent",pointsize=12)
+dev.off()
+Cairo()
+library(Cairo)
+CairoSVG(file="circle_art.svg",width=6,height=6,bg="black")
+dev.off()
+library(cairoDevice)
+Cairo()
+svg(filename = if(onefile) "Rplots.svg" else "Rplot%03d.svg",#
+    width = 7, height = 7, pointsize = 12,#
+    onefile = TRUE, family = "sans", bg = "white",#
+    antialias = c("default", "none", "gray", "subpixel"))
+onefile=TRUE
+svg(filename = if(onefile) "Rplots.svg" else "Rplot%03d.svg",#
+    width = 7, height = 7, pointsize = 12,#
+    onefile = TRUE, family = "sans", bg = "white",#
+    antialias = c("default", "none", "gray", "subpixel"))
+;
+objects()
+rm(list=ls()0
+rm(list=ls())
+objects()
+rm(ls=list())
+rm(list=ls())
+exit
+objects()
+setwd("/Users/clemensl/LODPlots")
+source('myLodPlot.R')
+exit
