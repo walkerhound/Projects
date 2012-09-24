@@ -4,6 +4,7 @@ use warnings;
 use Graph;
 require "readIdentifiers.pl";
 
+# perl script to find connected components based on identifiers and identifier links
 
 my $start = time();
 
