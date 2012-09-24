@@ -5,6 +5,7 @@ use Graph;
 require "readIdentifiers.pl";
 
 # perl script to find connected components based on identifiers and identifier links
+# uses perl::Graph
 
 my $start = time();
 
