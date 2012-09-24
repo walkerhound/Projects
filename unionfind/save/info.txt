@@ -1,0 +1,24 @@
+ Getting ready to read links from database 0.00
+ query: select ab.ID_NUMBER1,ab.ID_NUMBER2 from IDENTIFIER_LINKS_LEC ab  where (ab.ID_NUMBER1 < 500000 or ab.ID_NUMBER2 < 500000) and ab.organism = 'Mm' 
+ Finished reading links from database 7.00
+ Number of Links 1003630 7.00
+ Getting ready to add edges to graph 7.00
+Got Link: 1011481 315665 
+Got Link: 1011481 246975 
+Got Link: 619045 242916 
+Got Link: 1011481 370192 
+ Finished adding edges to graph 25.00
+ Number of Vertices 382807 26.00
+ Before subgraphs calculation 26.00
+ After subgraphs calculation 89.00
+ Number of connected components 42859 
+ Before printing Connected components to file 89.00
+ After printing Connected components to file 90.00
+ max component size 3113 
+ 382807 should match 382807 
+ Before printing Largest Connected component to file 90.00
+ After printing Largest Connected component to file 90.00
+ Before printing Connected components to file  in a different format 90.00
+ After printing Connected components to file  in a different format 90.00
+ checking if both vertices are in graph
+

@@ -1,0 +1,15 @@
+ Getting ready to read links from database 0.00
+ Finished reading links from database 12.00
+ Number of Links 1307418 12.00
+ Getting ready to add edges to graph 12.00
+ Finished adding edges to graph 34.00
+ Number of Vertices 641839 36.00
+ Before subgraphs calculation 36.00
+ After subgraphs calculation 144.00
+ Number of connected components 101675 
+ Before printing Connected components to file 144.00
+ After printing Connected components to file 145.00
+ max component size 22116 
+ 641839 should match 641839 
+ Before printing Largest Connected component to file 145.00
+ After printing Largest Connected component to file 145.00
