@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Gollum events</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $.getJSON('https://api.github.com/repos/TabakoffLab/General/events?callback=?', function(data) {
+
+        var list = $('#gollum-events');
+
+        $.each(data.data, function(key, val) {
+            if (val.type == "GollumEvent") {
+                $.each(val.payload.pages, function(key2, val2) {
+                    list.append('<li id="' + key + '.' + key2 + '"><a href="' + val2.html_url + '">' + val2.page_name + '</a> [' + val.actor.login + ' @ ' + val.created_at + ']</li>');
+                });
+            }
+        });
+    });
+});
+</script>
+</head>
+<body>
+<ul id="gollum-events"/>
+</body>
+</html>

@@ -1,0 +1,150 @@
+curl -i https://api.github.com
+
+amc-kenny:~> curl -i https://api.github.comHTTP/1.1 302 Found
+Server: nginx
+Date: Thu, 04 Oct 2012 14:35:13 GMT
+Content-Type: text/html;charset=utf-8
+Connection: keep-alive
+Status: 302 Found
+Cache-Control: 
+X-RateLimit-Remaining: 4997
+X-Content-Type-Options: nosniff
+Location: http://developer.github.com
+Content-Length: 0
+X-RateLimit-Limit: 5000
+
+--------------------------------------------------------------------------------
+curl -i "https://api.github.com/repos/walkerhound/Projects/issues?state=closed"
+
+amc-kenny:~> curl -i "https://api.github.com/repos/walkerhound/Projects/issues?state=closed"
+HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 04 Oct 2012 14:32:55 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Status: 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+X-RateLimit-Remaining: 4998
+X-Content-Type-Options: nosniff
+X-GitHub-Media-Type: github.beta
+Content-Length: 5
+ETag: "a00049ba79152d03380c34652f2cb612"
+X-RateLimit-Limit: 5000
+
+[
+
+]
+
+--------------------------------------------------------------------------------
+amc-kenny:~> curl -i -u walkerhound -d '{"scopes":["public_repo"]}' https://api.github.com/authorizations
+Enter host password for user 'walkerhound':
+HTTP/1.1 201 Created
+Server: nginx
+Date: Thu, 04 Oct 2012 14:36:03 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Status: 201 Created
+ETag: "5206c584d05638973e7a143ef53d5739"
+X-Content-Type-Options: nosniff
+Cache-Control: max-age=0, private, must-revalidate
+X-RateLimit-Limit: 5000
+X-GitHub-Media-Type: github.beta
+Content-Length: 402
+Location: https://api.github.com/authorizations/697643
+X-RateLimit-Remaining: 4999
+
+{
+  "app": {
+    "name": "GitHub API",
+    "url": "http://developer.github.com/v3/oauth/#oauth-authorizations-api"
+  },
+  "note": null,
+  "scopes": [
+    "public_repo"
+  ],
+  "created_at": "2012-10-04T14:36:03Z",
+  "note_url": null,
+  "token": "91859503a46f05f44faa91d2dd8bcfbe29a27756",
+  "updated_at": "2012-10-04T14:36:03Z",
+  "id": 697643,
+  "url": "https://api.github.com/authorizations/697643"
+}
+
+--------------------------------------------------------------------------------
+amc-kenny:~> curl -u "walkerhound" https://api.github.com
+Enter host password for user 'walkerhound':
+amc-kenny:~> 
+
+--------------------------------------------------------------------------------
+
+
+
+amc-kenny:~> curl -i https://api.github.com/users/walkerhound
+HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 04 Oct 2012 14:39:22 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Status: 200 OK
+ETag: "654cbb4a06bdd4c060684b11590b3624"
+X-Content-Type-Options: nosniff
+Cache-Control: public, s-maxage=60, max-age=60
+X-RateLimit-Limit: 5000
+X-GitHub-Media-Type: github.beta
+Content-Length: 673
+Vary: Accept
+Last-Modified: Sun, 30 Sep 2012 15:33:56 GMT
+X-RateLimit-Remaining: 4996
+
+{
+  "public_gists": 0,
+  "type": "User",
+  "gravatar_id": "d8ac5eb1102e86abe28bd62fe2f00066",
+  "login": "walkerhound",
+  "public_repos": 1,
+  "followers": 0,
+  "html_url": "https://github.com/walkerhound",
+  "created_at": "2012-09-14T18:06:54Z",
+  "hireable": false,
+  "email": "laura.clemens@ucdenver.edu",
+  "company": null,
+  "bio": null,
+  "following": 0,
+  "name": "Laura Clemens",
+  "avatar_url": "https://secure.gravatar.com/avatar/d8ac5eb1102e86abe28bd62fe2f00066?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+  "id": 2348481,
+  "blog": null,
+  "location": null,
+  "url": "https://api.github.com/users/walkerhound"
+}
+
+--------------------------------------------------------------------------------
+
+amc-kenny:~> curl https://api.github.com?callback=foo
+foo({
+  "data": null,
+  "meta": {
+    "status": 204,
+    "X-RateLimit-Limit": "5000",
+    "X-GitHub-Media-Type": "github.beta",
+    "X-RateLimit-Remaining": "4996"
+  }
+})
+
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
